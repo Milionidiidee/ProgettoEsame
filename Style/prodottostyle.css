@@ -1,0 +1,192 @@
+#tutto{
+	margin: 20px auto;
+}
+
+#image-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#immagine{
+	background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#nome{
+	font-weight: 550;
+    text-align: center;
+}
+
+#acquista{
+	float: right;
+    position: relative;
+    border: 1px solid grey;
+    padding-bottom: 2.5px;
+    background-color: #FAEBD7;
+}
+
+#categoria{
+	font-weight: 550;
+}
+
+#venditore{
+	font-weight: 550;
+}
+
+#prezzopieno{
+	text-decoration: line-through;
+}
+
+.banner{
+    background-color: #F5F5DC;
+}
+
+@media only screen and (max-width: 575px){
+	#acquista{
+    	top: 20px;
+        margin-left: 5px;
+        font-size: 16px;
+    }
+
+	#immagine{
+    	height: 290px;
+        width: 290px;
+        margin: 5px;
+    }
+    
+    #voto{
+    	margin: 7.5px 0;
+    }
+    
+    #descrizione{
+    	padding-top: 20px;
+        border-top: 1px solid grey;
+        font-size: 14px;
+    }
+    
+    .banner{
+    	margin-top: 10px;
+    	margin-bottom: 5px;
+    	height: 150px;
+    }
+}
+
+@media only screen and (min-width: 576px){
+	#acquista{
+    	top: 20px;
+        margin-left: 5px;
+        font-size: 16px;
+    }
+
+	#immagine{
+    	height: 290px;
+        width: 290px;
+        margin: 5px;
+    }
+    
+    #voto{
+    	margin: 7.5px 0;
+    }
+    
+    #descrizione{
+    	padding-top: 20px;
+        border-top: 1px solid grey;
+        font-size: 14px;
+    }
+    
+    .banner{
+    	margin-top: 10px;
+    	margin-bottom: 5px;
+    	height: 150px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px){
+
+	#acquista{
+    	top: 20px;
+        margin-left: 5px;
+        font-size: 14px;
+    }
+
+	#immagine{
+    	height: 290px;
+        width: 290px;
+        margin: 5px;
+    }
+    
+    #voto{
+    	margin: 7.5px 0;
+    }
+    
+    #descrizione{
+    	padding-top: 20px;
+        border-top: 1px solid grey;
+        font-size: 14px;
+    }
+    
+    .banner{
+    	margin-top: 10px;
+    	margin-bottom: 5px;
+    	height: 150px;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px){
+	#acquista{
+    	top: 45px;
+    }
+
+	#immagine{
+    	height: 395px;
+        width: 395px;
+        margin: 5px;
+    }
+    
+    #voto{
+    	margin: 7.5px 0;
+    }
+    
+    #descrizione{
+    	padding-top: 37.5px;
+        border-top: 1px solid grey;
+        font-size: 16px;
+    }
+    
+    .banner{
+    	margin-top: 10px;
+    	margin-bottom: 5px;
+    	height: 150px;
+    }
+}
+
+@media only screen and (min-width: 1200px){
+
+	#acquista{
+    	top: 45px;
+    }
+
+	#immagine{
+    	height: 465px;
+        width: 465px;
+        margin: 5px;
+    }
+    
+    #voto{
+    	margin: 7.5px 0;
+    }
+    
+    #descrizione{
+    	padding-top: 57.5px;
+        border-top: 1px solid grey;
+        font-size: 16px;
+    }
+    
+    .banner{
+    	margin-top: 10px;
+    	margin-bottom: 5px;
+    	height: 150px;
+    }
+}

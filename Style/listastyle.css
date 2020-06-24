@@ -1,0 +1,370 @@
+#filtri h2{
+    text-align: center;
+}
+
+#filtri input, #filtri select{
+    width: 100%;
+}
+
+ #offerta{
+     width: auto !important;
+    position: absolute;
+ }
+    
+#filtri label{
+    font-weight: 550;
+}
+
+#ordinaper{
+    float: right;
+}
+
+#lista{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+      justify-content: space-around;
+}
+
+.link-prodotto{
+    color: black;
+}
+
+.link-prodotto:hover{
+    color: black;
+    text-decoration: none;
+}
+
+.card-prodotto{
+    text-align: center;
+}
+
+.immagine-prodotto{
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+    
+#comandi{
+    display: flex;
+      justify-content: space-between;        
+}
+
+#pageBack{
+    background-image: url("http://sito259319.altervista.org/Immagini/arrowleft.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#pageForward{
+    background-image: url("http://sito259319.altervista.org/Immagini/arrowright.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 575px) {
+
+#mycontainer{
+    margin: 10px auto 0 auto;
+}
+
+#filtri{
+    margin-bottom: 10px;
+}
+
+#filtri h2{
+    font-size: large;
+    font-weight: 600;
+    border: 1px solid grey;
+    width: 175px;
+    margin: 0 auto;
+    background-color: lightgrey;
+}
+
+#ricerca:hover{
+    background-color: darkgrey;
+    color: white;
+}
+
+#filtri input, #filtri select{
+    margin-bottom: 3.5px;
+}
+
+#fake-form{
+    display: none;
+}
+
+#offerta{
+    left: 49%;
+    margin: 7.5px 0 !important;
+ }
+ 
+#filtri button{
+    margin: 10px 30%;
+    width: 40%;
+}
+
+ #ordinaper{
+     float: none;
+    margin: 0 auto;
+    height: 30px;
+    width: 177.5px;
+}
+
+#ordinamento{
+    width: 50%;
+}
+
+.card-prodotto{
+    width: 150px;
+    height: 300px;
+    margin: 10px 0 20px 0;
+}
+
+.card-prodotto h4{
+    font-size: 1.3rem;
+    font-weight: 510;
+}
+
+.immagine-prodotto{
+    width: 150px;
+    height: 150px;
+}
+
+.voto-prodotto{
+    margin-bottom: 7.5px;
+}
+
+#comandi{
+    width: 75px;
+    margin: 10px auto;  
+}
+
+#pageBack{
+    height: 25px;
+    width: 25px;
+}
+
+#pageForward{
+    height: 25px;
+    width: 25px;
+}
+
+
+}
+
+@media only screen and (min-width: 576px) and (max-width: 766px) {
+
+#mycontainer{
+    margin: 15px auto 0 auto;
+}
+
+
+#fake-form{
+    display: block;
+}
+
+#filtri h2{
+    font-size: large;
+    font-weight: 600;
+}
+
+#filtri input, #filtri select{
+    margin-bottom: 3.5px;
+}
+
+#offerta{
+    left: 82%;
+    margin: 7.5px 0 !important;
+ }
+ 
+#filtri button{
+    margin: 10px 30%;
+    width: 40%;
+}
+
+ #ordinaper{
+    margin: 6.5px 0 30px 0;
+    height: 30px;
+}
+
+.card-prodotto{
+    width: 150px;
+    height: 300px;
+    margin: 10px 0 20px 0;
+}
+
+.card-prodotto h4{
+    font-size: 1.3rem;
+    font-weight: 510;
+}
+
+.immagine-prodotto{
+    width: 150px;
+    height: 150px;
+}
+
+.voto-prodotto{
+    margin-bottom: 7.5px;
+}
+
+#comandi{
+    width: 75px;
+    margin: 10px auto;  
+}
+
+#pageBack{
+    height: 25px;
+    width: 25px;
+}
+
+#pageForward{
+    height: 25px;
+    width: 25px;
+}
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+ 
+#mycontainer{
+    margin: 20px auto 0 auto;
+}
+
+#fake-form{
+    display: block;
+}
+
+#filtri h2{
+    font-size: large;
+    font-weight: 600;
+}
+
+#filtri input, #filtri select{
+    margin-bottom: 3.5px;
+}
+
+#offerta{
+    left: 82%;
+    margin: 7.5px 0 !important;
+ }
+ 
+#filtri button{
+    margin: 10px 30%;
+    width: 40%;
+}
+
+ #ordinaper{
+    margin: 6.5px 0 30px 0;
+    height: 30px;
+}
+
+.card-prodotto{
+    width: 190px;
+    height: 332.5px;
+    margin: 10px 0 20px 0;
+}
+
+
+.immagine-prodotto{
+    width: 190px;
+    height: 190px;
+}
+
+.voto-prodotto{
+    margin-bottom: 7.5px;
+}
+
+#comandi{
+    width: 75px;
+    margin: 10px auto;  
+}
+
+#pageBack{
+    height: 25px;
+    width: 25px;
+}
+
+#pageForward{
+    height: 25px;
+    width: 25px;
+}
+      
+}
+
+@media only screen and (min-width: 992px) {
+
+#mycontainer{
+    margin: 20px auto 0 auto;
+}
+
+#fake-form{
+    display: block;
+}
+
+#filtri h2{
+    font-size: x-large;
+    font-weight: 550;
+}
+
+#filtri input, #filtri select{
+    margin-bottom: 3.5px;
+}
+
+#offerta{
+    left: 50%;
+    margin: 7.5px 0 !important;
+ }
+ 
+#filtri button{
+    margin: 10px 30%;
+    width: 40%;
+}
+
+ #ordinaper{
+    margin: 6.5px 0 30px 0;
+    height: 30px;
+}
+
+.card-prodotto{
+    width: 215px;
+    height: 365px;
+    margin: 10px 0 20px 0;
+}
+
+.immagine-prodotto{
+    width: 215px;
+    height: 215px;
+}
+
+.voto-prodotto{
+    margin-bottom: 7.5px;
+}
+
+#comandi{
+    width: 75px;
+    margin: 10px auto;  
+}
+
+#pageBack{
+    height: 25px;
+    width: 25px;
+}
+
+#pageForward{
+    height: 25px;
+    width: 25px;
+}
+      
+}
+
+@media only screen and (min-width: 1200px) {
+
+#filtri h2{
+    font-size: xx-large;
+    font-weight: 550;
+}
+
+}
