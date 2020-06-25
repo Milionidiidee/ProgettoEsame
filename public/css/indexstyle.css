@@ -4,20 +4,44 @@ body{
     border: 0;
 }
 
+a.navbar-brand{
+  font-size: 1.5em;
+}
+
+li.nav-item a.nav-link{
+  font-size: 1.2em;
+  padding: 4px 0 0 0;
+}
+
+
+
+a#link-carrello{
+  font-size: 1.2em;
+  padding: 4px 0 0 0;
+}
+
+figcaption:hover{
+  color: black;
+}
+
+figcaption{
+  color: white;
+}
+
 #informatica{
-	background: #87CEFA;
+	background: #49b1f1;
 }
 
 #libri{
-	background: #CD5C5C;
+	background: #5fbaf3;
 }
 
 #casa{
-	background: #5F9EA0;
+	background: #85c7f0;
 }
 
 #videogiochi{
-	background: #FF7F50;
+	background: #a2d2f0;
 }
 
 @media only screen and (max-width: 575px) {
@@ -29,7 +53,7 @@ body{
     
     .carousel-inner{
     	position: relative;
-        top: 34px;
+        top: -34px;
     }
     
     .carousel-indicators{
@@ -91,7 +115,7 @@ body{
      width: 300px;
      height: 160px;
      margin: 8px auto;
-     background-color: #FFFAF0;
+     background-color: #e6b044;
   }
   
   #prodotto-offerta{
@@ -184,7 +208,7 @@ body{
      width: 550px;
      height: 275px;
      margin: 8px auto;
-     background-color: #FFFAF0;
+     background-color: #e6b044;
   }
   
   #prodotto-offerta{
@@ -275,7 +299,7 @@ body{
      width: 700px;
      height: 260px;
      margin: 12px auto;
-     background-color: #FFFAF0;
+     background-color: #e6b044;
   }
   
   #prodotto-offerta{
@@ -357,7 +381,7 @@ body{
      width: 951px;
      height: 353px;
      margin: 16px auto;
-     background-color: #FFFAF0;
+     background-color: #e6b044;
   }
   
   #prodotto-offerta{
@@ -435,7 +459,7 @@ body{
      width: 1140px;
      height: 423px;
      margin: 20px auto;
-     background-color: #FFFAF0;
+     background-color: #e6b044;
   }
   
   #prodotto-offerta{
