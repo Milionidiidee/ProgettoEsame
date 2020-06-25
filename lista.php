@@ -8,7 +8,7 @@
 <body>
     <?php
     try {
-        $conn = new PDO("mysql:host=localhost; dbname=phpmyadmin","ciao","ciao");
+        $conn = new PDO("mysql:host=localhost; dbname=progettoesame","filippo","password");
 
         $sql = "SELECT * FROM prodotti";
 
