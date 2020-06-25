@@ -1,0 +1,456 @@
+body{
+	margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+#informatica{
+	background: #87CEFA;
+}
+
+#libri{
+	background: #CD5C5C;
+}
+
+#casa{
+	background: #5F9EA0;
+}
+
+#videogiochi{
+	background: #FF7F50;
+}
+
+@media only screen and (max-width: 575px) {
+  #carousel{
+	margin: 0 auto;
+	height: 111px;
+    width: 300px;
+	}
+    
+    .carousel-inner{
+    	position: relative;
+        top: 34px;
+    }
+    
+    .carousel-indicators{
+    	position: relative;
+        top: 98px;
+    }
+    
+   .carousel-item{
+       height: 111px;
+    	width: 300px;
+        font-weight: 520;
+   }
+   
+   .carousel-item h5{
+        font-weight: 520;
+       font-size: 15px;
+    	position: relative;
+        top: 38px;    
+    }
+   
+   .carousel-item p{
+       display: none;
+   }
+   
+   #categorie{
+   	margin: 8px auto;
+    width: 300px;
+    display:flex;
+  	flex-wrap: wrap;
+   }
+   
+   #categorie figure{
+   	height: 150px;
+    width: 150px;
+   	text-align: center;
+   	font-weight: 600;
+    margin: 0;
+   }
+   
+   #categorie figure img{
+   	height: 130px;
+    width: 130px;
+    margin: auto;
+   }
+   
+   #categorie figure figcaption{
+   	height: 15px;
+    width: 100%;
+    margin: auto;
+    font-size: small;
+   }
+   
+   #categorie figure figcaption img{
+   	height: 15px;
+    width: auto;   
+   }
+	
+  #banner-offerta{
+     width: 300px;
+     height: 160px;
+     margin: 8px auto;
+     background-color: #FFFAF0;
+  }
+  
+  #prodotto-offerta{
+  	height: 100%;
+    width: 100%;
+      background-image: url("http://sito259319.altervista.org/Immagini/1.png");
+      background-position: top;
+      background-size: contain;
+      background-repeat: no-repeat;
+  }
+  
+  #offertaR{
+    height: 160px;
+    width: 160px;
+  	float: right;
+  }
+   
+   
+}
+
+@media only screen and (min-width: 576px) and (max-width: 766px) {
+  #carousel{
+	margin: 0 auto;
+	height: 204px;
+    width: 550px;
+	}
+    
+    .carousel-inner{
+    	position: relative;
+        top: -32px;
+    }
+    
+    .carousel-indicators{
+    	position: relative;
+        top: 190px;    
+    }
+    
+   .carousel-item{
+       height: 204px;
+    	width: 550px;
+        font-weight: 520;
+   }
+   
+   .carousel-item h5{
+        font-weight: 520;
+       font-size: 17.5px;
+    	position: relative;
+        top: 40px; 
+   }
+   
+   .carousel-item p{
+       font-size: 12.5px;
+    	position: relative;
+        top: 40px; 
+   }
+   
+   #categorie{
+   	margin: 16px auto;
+    width: 550px;
+    display:flex;
+  	flex-wrap: wrap;
+   }
+   
+   #categorie figure{
+   	height: 275px;
+    width: 275px;
+   	text-align: center;
+   	font-weight: 600;
+    margin: 0;
+   }
+   
+   #categorie figure img{
+   	height: 250px;
+    width: 250px;
+    margin: auto;
+   }
+   
+   #categorie figure figcaption{
+   	height: 17.5px;
+    width: 100%;
+    margin: auto;
+   }
+   
+   #categorie figure figcaption img{
+   	height: 17.5px;
+    width: auto;   
+   }
+	
+  #banner-offerta{
+     width: 550px;
+     height: 275px;
+     margin: 8px auto;
+     background-color: #FFFAF0;
+  }
+  
+  #prodotto-offerta{
+  	height: 100%;
+    width: 100%;
+      background-image: url("http://sito259319.altervista.org/Immagini/1.png");
+      background-position: top;
+      background-size: contain;
+      background-repeat: no-repeat;
+  }
+  
+  #offertaR{
+    height: 275px;
+    width: 275px;
+  	float: right;
+  }
+   
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  #carousel{
+	margin: 0 auto;
+	height: 260px;
+    width: 700px;
+	} 
+    
+    .carousel-inner{
+    	position: relative;
+        top: -30px;
+    }
+    
+    .carousel-indicators{
+    	position: relative;
+        top: 240px;    
+    }
+    
+   .carousel-item{
+       height: 260px;
+    	width: 700px;
+        font-weight: 525;
+   }
+   
+   .carousel-item h5{
+        font-weight: 525;
+       font-size: 20px;
+    	position: relative;
+        top: 24px;    
+   }
+   
+   .carousel-item p{
+       font-size: 15px;
+    	position: relative;
+        top: 24px;    
+   }
+   
+   #categorie{
+   	margin: 12px auto;
+    width: 700px;
+    display:flex;
+  	flex-wrap: wrap;
+   }
+   
+   #categorie figure{
+   	height: 175px;
+    width: 175px;
+   	text-align: center;
+   font-weight: 600;
+   }
+   
+   #categorie figure img{
+   	height: 150px;
+    width: 150px;
+    margin: auto;
+   }
+   
+   #categorie figure figcaption{
+   	height: 17.5px;
+    width: 100%;
+    margin: auto;
+   }
+   
+   #categorie figure figcaption img{
+   	height: 17.5px;
+    width: auto;   
+   }
+	
+  #banner-offerta{
+     width: 700px;
+     height: 260px;
+     margin: 12px auto;
+     background-color: #FFFAF0;
+  }
+  
+  #prodotto-offerta{
+  	height: 100%;
+    width: 100%;
+      background-image: url("http://sito259319.altervista.org/Immagini/1.png");
+      background-position: top;
+      background-size: contain;
+      background-repeat: no-repeat;
+  }
+  
+  #offertaR{
+    height: 260px;
+    width: 260px;
+  	float: right;
+  }
+   
+   
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  #carousel{
+	margin: 16px auto;
+	height: 353px;
+    width: 951px;
+	}
+    
+   .carousel-item{
+       height: 353px;
+    	width: 951px;
+        font-weight: 550;
+   }
+   
+   .carousel-item h5{
+        font-weight: 550;
+       font-size: 22.5px;
+    	position: relative;
+        top: 12px;    
+   }
+   
+   .carousel-item p{
+       font-size: 17.5px;
+    	position: relative;
+        top: 12px;    
+   }
+   
+   #categorie{
+   	margin: 16px auto;
+    width: 951px;
+    display:flex;
+  	flex-wrap: wrap;
+   }
+   
+   #categorie figure{
+   	height: 237px;
+    width: 237px;
+   	text-align: center;
+   font-weight: 600;
+   }
+   
+   #categorie figure img{
+   	height: 207px;
+    width: 207px;
+    margin: auto;
+   }
+   
+   #categorie figure figcaption{
+   	height: 20px;
+    width: 100%;
+    margin: auto;
+   }
+   
+   #categorie figure figcaption img{
+   	height: 20px;
+    width: auto;   
+   }
+	
+  #banner-offerta{
+     width: 951px;
+     height: 353px;
+     margin: 16px auto;
+     background-color: #FFFAF0;
+  }
+  
+  #prodotto-offerta{
+  	height: 100%;
+    width: 100%;
+      background-image: url("http://sito259319.altervista.org/Immagini/1.png");
+      background-position: top;
+      background-size: contain;
+      background-repeat: no-repeat;
+  }
+  
+  #offertaR{
+    height: 353px;
+    width: 353px;
+  	float: right;
+  }
+   
+   
+}
+
+@media only screen and (min-width: 1200px) {
+  #carousel{
+	margin: 20px auto;
+	height: 423px;
+    width: 1140px;
+	}
+    
+   .carousel-item{
+       height: 423px;
+    	width: 1140px;
+        font-weight: 600;
+   }
+   
+   .carousel-item h5{
+        font-weight: 600;
+       font-size: 25px;
+   }
+   
+   .carousel-item p{
+       font-size: 20px;
+   }
+   
+   #categorie{
+   	margin: 20px auto;
+    width: 1140px;
+    display:flex;
+  	flex-wrap: no-wrap;
+   }
+   
+   #categorie figure{
+   	height: 285px;
+    width: 285px;
+   	text-align: center;
+   font-weight: 600;
+   }
+   
+   #categorie figure img{
+   	height: 255px;
+    width: 255px;
+    margin: auto;
+   }
+   
+   #categorie figure figcaption{
+   	height: 20px;
+    width: 100%;
+    margin: auto;
+   }
+   
+   #categorie figure figcaption img{
+   	height: 20px;
+    width: auto;   
+   }
+	
+  #banner-offerta{
+     width: 1140px;
+     height: 423px;
+     margin: 20px auto;
+     background-color: #FFFAF0;
+  }
+  
+  #prodotto-offerta{
+  	height: 100%;
+    width: 100%;
+      background-image: url("http://sito259319.altervista.org/Immagini/1.png");
+      background-position: top;
+      background-size: contain;
+      background-repeat: no-repeat;
+  }
+  
+  #offertaR{
+    height: 423px;
+    width: 423px;
+  	float: right;
+  }
+   
+}

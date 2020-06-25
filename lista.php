@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -22,7 +22,7 @@
         $sql = "SELECT Nome FROM Prodotti WHERE Categoria='Informatica'";
     }
     catch (Exception $e) {
-        echo $e->getMessage();
+        echo $e->getMessage();\
     }
 
     #per ogni elemento nell'array del Db creo la casella prodotto
