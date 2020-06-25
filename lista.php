@@ -8,18 +8,19 @@
 <body>
     <?php
     try {
-        $conn = new PDO("mysql:host=localhost; dbname=testpw","testpw","prova1");
-        echo "Connesso";
+        $conn = new PDO("mysql:host=localhost; dbname=phpmyadmin","ciao","ciao");
 
-        $sql = "INSERT INTO `MyGuest` (`nome`,`email`,`commento`) VALUES ('Giovanni', 'gg@pp.it', 'aaah')";
-        echo $sql;
+        $sql = "SELECT * FROM prodotti WHERE Nome='Noninf'";
 
-        $conn->exec($sql);
-        $last_id = $conn->lastInsertId();
+        $q = $conn->query($sql);
+        #$q-> setFetchMode(PDO::FETCH_ASSOC);
 
-        echo "inserito Guest numero $last_id";
+        $rows = $q->fetchAll(PDO::FETCH_ASSOC);
 
-        $sql = "SELECT Nome FROM Prodotti WHERE Categoria='Informatica'";
+        foreach( $rows as $row )
+        {
+            echo "Nome: " . $row["Nome"]. " - Img: " . $row["Immagine"]. " - Desc: " . $row["Descrizione"]. " - Prezzo: " . $row["Prezzo"]. "<br>";
+        }
     }
     catch (Exception $e) {
         echo $e->getMessage();
@@ -33,6 +34,10 @@
     <h5>prezzo</h5>
     </div>";
     ?>
-    <h1>sdafdasf</h1>
 </body>
 </html>
+
+<?php
+while ($row = $q->fetch()){
+            echo "Nome: " . $row["Nome"]. " - Img: " . $row["Immagine"]. " - Desc: " . $row["Descrizione"]. " - Prezzo: " . $row["Prezzo"]. "<br>";
+        } ?>
