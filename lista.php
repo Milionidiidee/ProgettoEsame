@@ -21,6 +21,25 @@
             //echo $sql;
             echo "<br>";
         }
+        
+
+        /*if (isset($_POST['categorie']) && $_POST['categorie'] != "") {
+          $sql = $sql." AND Categorie LIKE '%".$_POST['categorie']."%'";
+          //echo $sql;
+          echo "<br>";
+        }
+
+        if (isset($_POST['venditori']) && $_POST['venditori'] != "") {
+        $sql = $sql." AND Venditori LIKE '%".$_POST['venditori']."%'";
+        //echo $sql;
+        echo "<br>";
+        }*/
+
+
+
+
+
+
 
         $q = $conn->query($sql);
 
@@ -28,7 +47,7 @@
             $rows = $q->fetchAll(PDO::FETCH_ASSOC);
             foreach( $rows as $row )
             {
-                echo "Nome: " . $row["Nome"]. " - Img: " . $row["Immagine"]. " - Desc: " . $row["Descrizione"]. " - Prezzo: " . $row["Prezzo"]. "<br>";
+                echo "Nome: " . $row["Nome"]. " - Img: " . $row["Immagine"]. " - Desc: " . $row["Descrizione"]. " - Prezzo: " . $row["Prezzo"].  " - Categorie: " . $row['Categorie'].   " - Venditori: " . $row['Venditori']. "<br>";
             }
         }else {
             echo "Err";
@@ -68,86 +87,45 @@
         </div>
     </nav>
     
-  <script src="public/js/lista.js"></script>
+  <!--<script src="public/js/lista.js"></script>-->
     
     <div id="mycontainer" class="container">
       <div class="row">
           <aside id="filtri" class="col-12 col-sm-4 col-md-3">
-            <h2 id="ricerca">Ricerca Avanzata</h2>
-            <div id="fake-form">
-              <label for="nome">Nome: </label><br>
-                <input name="nome" id="nome" type="text" value=""><br>
-               <label for="categoria">Categoria: </label><br>
-                 <select name="categoria" id="categoria">
-                     <option value="vuoto" selected> </option>
-                     <option value="casa">Casa</option>
-                     <option value="informatica">Informatica</option>
-                     <option value="libri">Libri</option>
-                     <option value="smartphone e cellulari">Smartphone e Cellulari</option>
-                     <option value="videogiochi">Videogiochi</option>
-                  </select><br>
-              <label for="venditore">Venditore: </label><br>
-                <input name="venditore" id="venditore" type="text" value=""><br>
-                <label for="voto">Voto minimo: </label><br>
-                  <select name="voto" id="voto">
-                     <option value="0" selected> </option>
-                     <option value="0.5">0.5</option>
-                     <option value="1.5">1.5</option>
-                     <option value="2.5">2.5</option>
-                     <option value="3.5">3.5</option>
-                     <option value="4.5">4.5</option>
-                  </select><br>
-                 <label for="costomin">Prezzo: </label><br>
-                 <input name="costomin" id="costomin" type="number" step="0.1" value="0"><br>
-                 <label for="spedizionemax">Spedizione max: </label><br>
-                 <input name="spedizionemax" id="spedizionemax" type="number" step="0.1" value="0"><br>
-                 <label for="offerta">In offerta? </label>
-                 <input name="offerta" id="offerta" type="checkbox" value="on"><br>
-                <button class="btn btn-outline-dark my-2 my-sm-0 text-black"onclick="selezionaEriordina()">Search</button>
-             </div>
-          </aside>
-          <section id="container-lista" class="col-12 col-sm-8 col-md-9">
-            <div id="ordinaper">
-              Ordina per: 
-              <select id="ordinamento" name="ordine" onchange="selezionaEriordina()">
-                  <option value="1" selected>A - Z</option>
-                  <option value="2">Z - A</option>
-                  <option value="3">Prezzo più basso</option>
-                  <option value="4">Prezzo più alto</option>
-              </select>
-            </div>
-            <input type='hidden' id='caratteri' name='caratteri' value='0'>
-            <div id="lista">
-            <script>calcolaCaratteri(); setCategoria(''); selezionaEriordina();</script>
-            </div>
-            <div id="comandi">
-              <button id="pageBack" onclick="pageBack()"></button>
-                <button id="pageForward" onclick="pageForward()"></button>
-            </div>
+          <h2 id="ricerca">Ricerca Avanzata</h2>
+        <form action="./lista.php" method="POST">
+            <label for="nome">Nome: </label><br>
+            <input name="nome" id="nome" type="text" value=""><br>
+            <label for="categorie">Categorie: </label><br>
+                <select name="categorie" id="categorie">
+                    <option value="vuoto" selected> </option>
+                    <option value="informatica">Informatica</option>
+                    <option value="videogiochi">Videogiochi</option>
+                    <option value="telefonia">Telefonia</option>
+                    <option value="libri">Libri</option>
+                    <option value="utilità">Utilità</option>
+                </select><br>
+
+                <label for="venditori">Venditori: </label><br>
+                <input name="venditori" id="venditori" type="text" value=""><br>
+
+                 <label for="voti">Voti: </label><br>
+                    <select name="voti" id="voti">
+                      <option value="0" selected> </option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="3.5">3.5</option>
+                      <option value="4">4</option>
+                      <option value="4.5">4.5</option>
+                    </select><br>
+                <input  class="btn btn-outline-dark my-2 my-sm-0 text-black" type="submit" value="Cerca">
+        </form>
+
           </section>
           
-          <div class="orizontal-fake-banner"></div>
-          
-      </div>
 
     </div>
 
-    <script>
-      loadCSS('public/css/listastyle.css');
-      var cliccato = false;
-        var form = document.getElementById("fake-form");
-        var ricerca = document.getElementById("ricerca");
-
-        ricerca.addEventListener("click", function(){
-            if(!cliccato&&(window.innerWidth < 576)){
-                form.style.display = "block";
-                cliccato = true;
-            }else if(window.innerWidth < 576){
-                form.style.display = "none";
-                cliccato = false;
-            }
-        });
-    </script>
 <footer class="my-footer">
       <span class="footer-element">
           <a href="#">Let Us Help You</a>
