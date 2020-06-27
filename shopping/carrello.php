@@ -5,7 +5,7 @@
     require_once("CreateDb.php");
     require_once("component.php");
 
-    $db = new CreateDb("Productdb", "Producttb")
+    $db = new CreateDb("Productdb", "Producttb");
 
 ?><!DOCTYPE html>
 <html lang="en">

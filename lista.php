@@ -118,6 +118,10 @@
                       <option value="4">4</option>
                       <option value="4.5">4.5</option>
                     </select><br>
+                    <select id="ordinamento" name="ordine">
+                      <option value="1" selected>A - Z</option>
+                      <option value="2">Z - A</option>
+                    </select>
                 <input  class="btn btn-outline-dark my-2 my-sm-0 text-black" type="submit" value="Cerca">
         </form>
 
