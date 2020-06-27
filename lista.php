@@ -165,8 +165,8 @@
       {
           echo "<div>";
           echo "<h2>".$row['Nome']."</h2>";
-          echo "<h3>".$row['Venditori']."</h3>";
-          echo "<h3>".$row['Voti']."</h3>";
+          echo "<h3>Venditore: ".$row['Venditori']."</h3>";
+          echo "<h3>Voto: ".$row['Voti']."</h3>";
           echo "<img src='public/Immagini/".$row['Immagine']."' alt='Immagine'>";
           echo "</div>";
       }
