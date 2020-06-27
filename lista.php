@@ -126,11 +126,11 @@
             <label for="categorie">Categorie: </label><br>
                 <select name="categorie" id="categorie">
                     <option value="" selected> </option>
-                    <option value="informatica">Informatica</option>
-                    <option value="videogiochi">Videogiochi</option>
-                    <option value="telefonia">Telefonia</option>
-                    <option value="libri">Libri</option>
-                    <option value="utilità">Utilità</option>
+                    <option value="Informatica">Informatica</option>
+                    <option value="Videogiochi">Videogiochi</option>
+                    <option value="Telefonia">Telefonia</option>
+                    <option value="Libri">Libri</option>
+                    <option value="Utilità">Utilità</option>
                 </select><br>
 
                 <label for="venditori">Venditori: </label><br>
@@ -153,6 +153,7 @@
         </form>
 
           </section>
+    </div>
     </div>
 
 <footer class="my-footer">
