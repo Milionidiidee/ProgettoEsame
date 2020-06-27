@@ -156,7 +156,27 @@
           
 
     </div>
-    </div>
+
+    <?php
+    
+    if ($q) {
+      $rows = $q->fetchAll(PDO::FETCH_ASSOC);
+      foreach( $rows as $row )
+      {
+          echo "<div>";
+          echo "<h2>".$row['Nome']."</h2>";
+          echo "<h3>".$row['Venditori']."</h3>";
+          echo "<h3>".$row['Voti']."</h3>";
+          echo "<img src='public/Immagini/".$row['Immagine']."' alt='Immagine'>";
+          echo "</div>";
+      }
+  }else {
+      echo "Err";
+  }
+
+    ?>
+
+  </div>
 
 <footer class="my-footer">
       <span class="footer-element">
