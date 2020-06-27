@@ -130,7 +130,7 @@
                     <option value="Videogiochi">Videogiochi</option>
                     <option value="Telefonia">Telefonia</option>
                     <option value="Libri">Libri</option>
-                    <option value="Utilità">Utilità</option>
+                    <option value="Utilita">Utilità</option>
                 </select><br>
 
                 <label for="venditori">Venditori: </label><br>
