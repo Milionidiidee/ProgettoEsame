@@ -1,48 +1,4 @@
-<?php
-
-
-//start session
-session_start();
-
-require_once('CreateDb.php');
-require_once('component.php');
-
-
-//create instance of CreateDb class
-$database = new CreateDb("Productdb", "Producttb");
-
-if(isset($_POST['add'])){
-  ///print_r($_POST['product_id']);
-  if(isset($_SESSION['cart'])){
-
-    $item_array_id = array_column($_SESSION['cart'], "product_id");
-
-    if(in_array($_POST['product_id'], $item_array_id)){
-      echo "<script>alert(\"Product is already been added..!\")</script>";
-      echo "<script>window.location = 'carrello.php'</script>";
-    }else{
-      
-      $count = count($_SESSION['cart']);
-      $item_array = array(
-        'product_id' => $_POST['product_id']
-      );
-      
-      $_SESSION['cart'][$count] = $item_array;
-      print_r($_SESSION);
-    }
-
-  }else{
-    $item_array = array(
-      'product_id' => $_POST['product_id']
-    );
-
-    //create new session variable
-    $_SESSION['cart'][0] = $item_array;
-    print_r($_SESSION['cart']);
-  }
-}
-
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 
@@ -50,15 +6,13 @@ if(isset($_POST['add'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Store</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
     <link rel="stylesheet" href="../public/css/indexstyle.css">
     <link rel="stylesheet" href="../public/css/footerstyle.css">
-    <link rel="stylesheet" href="../public/css/carrellostyle.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
   </head>
-
 <body>
-    
-<nav id="mynavbar" class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark menu">
+    <nav id="mynavbar" class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark menu">
         <a class="navbar-brand" href="http://localhost/PW%202020/esameprogetto/index.php">Online Store</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -87,23 +41,122 @@ if(isset($_POST['add'])){
     </nav>
 
 
-<main>
-  <div class="container">
+
+    <div class="container">
       <div class="row text-center py-5">
-        <?php 
-           
-          $result = $database->getdata();
-          while($row = mysqli_fetch_assoc($result)){
-            component($row['product_name'], $row['product_price'], $row['product_image'], $row['id']);
-          }
-
-        ?>
+      <div class="col-md-3 col-sm-6 my-3 my-md-0">
+        <form action="index.php" method="post">
+            <div class="card shadow">
+                <div>
+                    <img src="upload/product1.png" alt="Image1" class="img-fluid card-img-top">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Product 1</h5>
+                    <h6>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    </h6>
+                    <p class="card-text">
+                        Some quick example text to build on the card.
+                    </p>
+                    <h5>
+                        <small><s class="text-secondary">599€</s></small>
+                        <span class="price">519€</span>
+                    </h5>
+                    <button class="btn btn-outline-dark my-2 my-sm-0 text-black" type="submit" name="add">Add to Cart <i class="fas fa-shopping-cart"></i></button>
+                </div>
+            </div>
+        </form>
       </div>
-  </div>
-</main>
+      <div class="col-md-3 col-sm-6 my-3 my-md-0">
+      <form action="index.php" method="post">
+            <div class="card shadow">
+                <div>
+                    <img src="upload/product1.png" alt="Image1" class="img-fluid card-img-top">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Product 1</h5>
+                    <h6>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    </h6>
+                    <p class="card-text">
+                        Some quick example text to build on the card.
+                    </p>
+                    <h5>
+                        <small><s class="text-secondary">599€</s></small>
+                        <span class="price">519€</span>
+                    </h5>
+                    <button class="btn btn-outline-dark my-2 my-sm-0 text-black" type="submit" name="add">Add to Cart <i class="fas fa-shopping-cart"></i></button>
+                </div>
+            </div>
+        </form>
+      </div>
+      <div class="col-md-3 col-sm-6 my-3 my-md-0">
+      <form action="index.php" method="post">
+            <div class="card shadow">
+                <div>
+                    <img src="upload/product1.png" alt="Image1" class="img-fluid card-img-top">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Product 1</h5>
+                    <h6>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    </h6>
+                    <p class="card-text">
+                        Some quick example text to build on the card.
+                    </p>
+                    <h5>
+                        <small><s class="text-secondary">599€</s></small>
+                        <span class="price">519€</span>
+                    </h5>
+                    <button class="btn btn-outline-dark my-2 my-sm-0 text-black" type="submit" name="add">Add to Cart <i class="fas fa-shopping-cart"></i></button>
+                </div>
+            </div>
+        </form>
+      </div>
+      <div class="col-md-3 col-sm-6 my-3 my-md-0">
+      <form action="index.php" method="post">
+            <div class="card shadow">
+                <div>
+                    <img src="upload/product1.png" alt="Image1" class="img-fluid card-img-top">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Product 1</h5>
+                    <h6>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    </h6>
+                    <p class="card-text">
+                        Some quick example text to build on the card.
+                    </p>
+                    <h5>
+                        <small><s class="text-secondary">599€</s></small>
+                        <span class="price">519€</span>
+                    </h5>
+                    <button class="btn btn-outline-dark my-2 my-sm-0 text-black" type="submit" name="add">Add to Cart <i class="fas fa-shopping-cart"></i></button>
+                </div>
+            </div>
+        </form>
+      </div>
+      </div>
+    </div>
 
 
-<footer class="my-footer">
+    <footer class="my-footer">
       <span class="footer-element">
           <a href="#">Let Us Help You</a>
       </span>

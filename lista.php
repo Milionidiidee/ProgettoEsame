@@ -50,17 +50,6 @@
         }
         
 
-        /*if (isset($_POST['categorie']) && $_POST['categorie'] != "") {
-          $sql = $sql." AND Categorie LIKE '%".$_POST['categorie']."%'";
-          //echo $sql;
-          echo "<br>";
-        }
-
-        if (isset($_POST['venditori']) && $_POST['venditori'] != "") {
-        $sql = $sql." AND Venditori LIKE '%".$_POST['venditori']."%'";
-        //echo $sql;
-        echo "<br>";
-        }*/
 
 
 
@@ -114,7 +103,6 @@
         </div>
     </nav>
     
-  <!--<script src="public/js/lista.js"></script>-->
     
     <div id="mycontainer" class="container">
       <div class="row">
