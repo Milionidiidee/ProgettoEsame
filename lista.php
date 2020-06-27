@@ -156,6 +156,7 @@
           
 
     </div>
+    </div>
 
 <footer class="my-footer">
       <span class="footer-element">
