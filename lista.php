@@ -16,10 +16,37 @@
 
         $sql = "SELECT * FROM prodotti";
 
+        $esisteCondizionePrecedente = false;
+
         if (isset($_POST['nome']) && $_POST['nome'] != "") {
-            $sql = $sql." WHERE Nome LIKE '%".$_POST['nome']."%'";
-            //echo $sql;
-            echo "<br>";
+            $sql = $sql." WHERE (Nome LIKE '%".$_POST['nome']."%')";
+            $esisteCondizionePrecedente = true;
+        }
+        if (isset($_POST['categorie']) && $_POST['categorie'] != "") {
+          if ($esisteCondizionePrecedente) $sql = $sql." AND WHERE (Categorie LIKE '%".$_POST['categorie']."%')";
+          else {
+            $sql = $sql." WHERE (Categorie LIKE '%".$_POST['categorie']."%')";
+            $esisteCondizionePrecedente = true;
+          }
+        }
+        if (isset($_POST['venditori']) && $_POST['venditori'] != "") {
+          if ($esisteCondizionePrecedente) $sql = $sql." AND WHERE (Venditori LIKE '%".$_POST['venditori']."%')";
+          else {
+            $sql = $sql." WHERE (Venditori LIKE '%".$_POST['venditori']."%')";
+            $esisteCondizionePrecedente = true;
+          }
+        }
+        if (isset($_POST['voti']) && $_POST['voti'] != "") {
+          if ($esisteCondizionePrecedente) $sql = $sql." AND WHERE (Voti=".$_POST['voti'].")";
+          else {
+            $sql = $sql." WHERE (Voti=".$_POST['voti'].")";
+            $esisteCondizionePrecedente = true;
+          }
+        }
+
+        if (isset($_POST['ordine']) && $_POST['ordine'] != "") {
+          if ($_POST['ordine'] == "A - Z") $sql = $sql." ORDER BY Nome ASC";
+          else if ($_POST['ordine'] == "Z - A") $sql = $sql." ORDER BY Nome ASC";
         }
         
 
