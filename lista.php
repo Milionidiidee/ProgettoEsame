@@ -153,8 +153,6 @@
         </form>
 
           </section>
-          
-
     </div>
 
 <footer class="my-footer">
