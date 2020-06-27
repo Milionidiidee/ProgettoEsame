@@ -45,8 +45,8 @@
         }
 
         if (isset($_POST['ordine']) && $_POST['ordine'] != "") {
-          if ($_POST['ordine'] == "A - Z") $sql = $sql." ORDER BY Nome ASC";
-          else if ($_POST['ordine'] == "Z - A") $sql = $sql." ORDER BY Nome ASC";
+          if ($_POST['ordine'] == "1") $sql = $sql." ORDER BY Nome ASC";
+          else if ($_POST['ordine'] == "2") $sql = $sql." ORDER BY Nome DESC";
         }
         
 
@@ -67,7 +67,7 @@
 
 
 
-
+        //echo $sql;
         $q = $conn->query($sql);
 
         if ($q) {
@@ -125,7 +125,7 @@
             <input name="nome" id="nome" type="text" value=""><br>
             <label for="categorie">Categorie: </label><br>
                 <select name="categorie" id="categorie">
-                    <option value="vuoto" selected> </option>
+                    <option value="" selected> </option>
                     <option value="informatica">Informatica</option>
                     <option value="videogiochi">Videogiochi</option>
                     <option value="telefonia">Telefonia</option>
@@ -138,7 +138,7 @@
 
                  <label for="voti">Voti: </label><br>
                     <select name="voti" id="voti">
-                      <option value="0" selected> </option>
+                      <option value="" selected> </option>
                       <option value="2">2</option>
                       <option value="3">3</option>
                       <option value="3.5">3.5</option>
