@@ -1,48 +1,23 @@
 <?php
 
-
-//start session
 session_start();
 
-if(isset($_POST['add'])){
-  ///print_r($_POST['product_id']);
-  if(isset($_SESSION['cart'])){
+require_once("php/comp.php");
+require_once("php/CreateDb.php");
 
-    $item_array_id = array_column($_SESSION['cart'], 'product_id');
+$db = new CreateDb("Productdb", "Producttb");
 
-    if(in_array($_POST['product_id'], $item_array_id)){
-      echo "<script>alert(\"Product is alredy been added in the cart!\")</script>";
-      echo "<script>window.location = \"index.php\"</script>";
-    }else{
-       
-      $count = count($_SESSION['cart']);
-      $item_array = array(
-        'product_id' => $_POST['product_id']
-      );
-
-      $_SESSION['cart'][$count] = $item_array;
-      print_r($_SESSION['cart']);
+if(isset($_POST['remove'])){
+  if($_GET['action'] == 'remove'){
+    foreach($_SESSION['cart'] as $key => $value){
+      if($value['product_id'] == $_GET['id']){
+        unset($_SESSION['cart'][$key]);
+        echo "<script>alert(\"Product has been Removed..!\")</script>";
+        echo "<script>window.location = 'cart.php'</script>";
+      }
     }
-
-  }else{
-
-    $item_array = array(
-      'product_id' => $_POST['product_id']
-    );
-
-    //Create new session variable
-    $_SESSION['cart'][0] = $item_array;
-    print_r($_SESSION['cart']);
-
   }
 }
-
-require_once('php/CreateDb.php');
-require_once('php/comp.php');
-
-//ceate an instance of CreateDb
-$database = new CreateDb("Productdb", "Producttb");
-
 
 ?><!DOCTYPE html>
 <html lang="en">
@@ -56,6 +31,19 @@ $database = new CreateDb("Productdb", "Producttb");
     <link rel="stylesheet" href="../public/css/footerstyle.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    <style>
+
+    div.col-md-3,
+    div.col-md-6{
+        padding: 15px 0;
+    }
+
+    h6{
+        padding-top: 15px;
+    }
+    
+
+    </style>
   </head>
 <body>
     <nav id="mynavbar" class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark menu">
@@ -79,7 +67,7 @@ $database = new CreateDb("Productdb", "Producttb");
             <input class="form-control mr-sm-2" name="nome" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-light my-2 my-sm-0 text-black" style="border-color: white" type="submit">Search</button>
           </form>
-          <a id="link-carrello" href="http://localhost/PW%202020/esameprogetto/shopping/cart.php" class="nav-item text-light ml-auto">
+          <a id="link-carrello" href="#" class="nav-item text-light ml-auto">
           <h5>
             <i class="fas fa-shopping-cart"></i>My Cart
             <?php
@@ -98,34 +86,72 @@ $database = new CreateDb("Productdb", "Producttb");
         </div>
     </nav>
 
+<div class="container-fluid">
+    <div class="row px-5">
+        <div class="col-md-7">
+            <div class="shoppig-cart">
+                <h6>My Cart</h6>
+                <hr>
 
+                <?php
+                
+                $total = 0;
+                /*if(isset($_SESSION['cart'])){
+                  $product_id = array_column($_SESSION["cart"], 'product_id');
 
-    <div class="container">
-      <div class="row text-center py-5">
-        <?php
-        
+                  $result = $db->getData();
+                  while($row = mysqli_fetch_assoc($result)){
+                    foreach($product_id as $id){
+                      if($row["id"] == $id){
+                        cartElement($row["product_name"], $row["product_price"], $row["id"]);
+                        $total = $total + (int)$row['product_price'];
+                      }
+                    }
+                  }
+                }else{
+                  echo "<h5>Cart is Empty</h5>";
+                }*/
+                
+                ?>
 
-        $result = $database->getData();
-        while ($row = mysqli_fetch_assoc($result)){
-          component($row['product_name'], $row['product_price'], $row['product_image'], $row['id']);
-        }
+            </div>
+        </div>
+        <div class="col-md-4 offset-md-1 border rounded mt-5 bg-white h-25">
+            
+            <div class="pt-4">
+                <h6>PRICE DETAILS</h6>
+                <hr>
+                <div class="row price-details">
+                  <div class="col-md-6">
+                    <?php
+                    
+                    if(isset($_SESSION['cart'])){
+                     $count = count($_SESSION['cart']);
+                     echo "<h6>Price($count items)</h6>";
+                    }else{
+                     echo "<h6>Price(0 items)</h6>";
+                    }
+                    
+                    ?>
+                    <h6>Delivery Charges</h6>
+                    <hr>
+                    <h6>Amount Payable</h6>
+                  </div>
+                  <div class="col-md-6">
+                    <h6>€<?php echo $total?></h6>
+                    <h6 class="text-success">FREE</h6>
+                    <hr>
+                    <h6>€<?php 
+                      echo $total;
+                    ?></h6>
+                  </div>
+                </div>
+            </div>
 
-        ?>
-      </div>
+        </div>
     </div>
+</div>
 
-
-    <footer class="my-footer">
-      <span class="footer-element">
-          <a href="#">Let Us Help You</a>
-      </span>
-      <span class="footer-element">
-          <a href="#">Privacy</a>
-      </span>
-      <span class="footer-element">
-          <a href="#">Administration</a>
-      </span>
-</footer>
 
 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
